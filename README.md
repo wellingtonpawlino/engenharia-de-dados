@@ -1,39 +1,48 @@
-# Engenharia de Dados: Projeto com Python, S3 e Pandas
+# ⚙️ Engenharia de Dados com AWS S3 · Bronze → Silver → Gold
 
-Este projeto demonstra a construção de uma pipeline de engenharia de dados com foco em boas práticas, modularidade, e integração com serviços da AWS. Ideal para estudos, portfólio ou como base para projetos reais.
-
----
-
-## 🚀 Funcionalidades
-
-- 🗂️ Organização de dados em camadas: *raw*, *processed*, *refined*
-- 🐍 ETL com Python, pandas e scripts reutilizáveis
-- ☁️ Integração com AWS S3 via boto3
-- 📓 Notebooks para exploração e testes
-- 📦 Ambiente virtual isolado com dependências controladas
-- 🔁 Upload/download automático de arquivos no S3
+Projeto didático voltado à construção de uma arquitetura de dados em camadas utilizando Python e AWS S3. Ideal para aprender conceitos como ingestão de dados, organização em buckets e boas práticas de repositório.
 
 ---
 
-## 🧱 Estrutura do Projeto
+## 🧱 Estrutura de Camadas (Lakehouse)
 
-
----
-
-## ⚙️ Requisitos
-
-- Python 3.10+
-- [AWS CLI configurado](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
-- Ambiente virtual ativo
+| Camada | Bucket S3           | Descrição                                      |
+|--------|---------------------|-----------------------------------------------|
+| Bronze | `welldata-bronze`   | Dados crus, direto da fonte                   |
+| Silver | `welldata-silver`   | Dados tratados e validados                    |
+| Gold   | `welldata-gold`     | Dados prontos para consumo analítico e BI     |
 
 ---
 
-## 📦 Setup do Ambiente
+## 📁 Estrutura do Projeto
+
+---
+
+## 🧪 Pré-requisitos
+
+- Python 3.9+
+- Conta AWS e chaves de acesso
+- Git instalado
+
+---
+
+## 🚀 Como usar
 
 ```bash
-# Criar e ativar ambiente virtual
-python -m venv engenharia-de-dados
-source engenharia-de-dados/Scripts/activate
+# Clone o repositório
+git clone git@github.com:wellingtonpawlino/engenharia-de-dados.git
+cd engenharia-de-dados
 
-# Instalar dependências
+# Crie e ative a virtualenv
+python -m venv .venv
+source .venv/Scripts/activate  # ou .venv/bin/activate no Linux/macOS
+
+# Instale as dependências
 pip install -r requirements.txt
+
+# Crie o arquivo .env a partir do modelo
+cp .env.template .env
+# (edite e insira suas credenciais AWS)
+
+# Crie os buckets S3
+python aws_utils/criar_buckets.py
