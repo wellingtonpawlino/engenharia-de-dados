@@ -1,0 +1,38 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+.venv/Lib
+# 🔒 Variáveis sensíveis
+.env
+*.env
+.env.*
+
+# 🐍 Ambientes virtuais
+.venv/
+venv/
+
+# 🔁 Caches e arquivos compilados
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 🚫 Arquivos temporários de sistema
+.DS_Store
+Thumbs.db
+
+# 💻 Configurações de IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# 📓 Jupyter notebooks
+.ipynb_checkpoints/
+
+# 📦 Logs, dados temporários e arquivos auxiliares
+*.log
+*.tmp
+*.bak
+*.swp
+
+# 📂 Arquivos de build
+build/
+dist/
+*.egg-info/
